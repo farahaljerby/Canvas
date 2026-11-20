@@ -1,0 +1,675 @@
+:root {
+  --ink: #e6dac8;
+  --muted: #9a9285;
+  --line: #2b2926;
+  --panel: #1a1917;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Verdana, Geneva, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #000;
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: var(--serif);
+  text-align: center;
+  font-size: 45px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.Canvas-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  text-align: center;
+}
+
+.Canvas-head h1 {
+  margin: 0;
+  font-weight: 400;
+  font-size: clamp(64px, 12vw, 130px);
+  letter-spacing: -0.06em;
+  line-height: 1;
+}
+
+.navbar {
+  font-size: 35px;
+}
+
+.navbar a {
+  padding: 0 20px;
+  margin-top: 50px;
+}
+
+.start {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+}
+
+.start img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.start h1 {
+  position: absolute;
+  z-index: 1;
+  margin: 0;
+  bottom: -70px;
+  left: 30px;
+  width: 50%;
+  font-size: 55px;
+  color: #e8e1d6;
+  text-shadow: 5px 8px 12px rgba(0, 0, 0, 0.65);
+}
+
+.Canvas-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 150px;
+  justify-items: center;
+}
+
+.Canvas-item > div {
+  position: relative;
+}
+
+.Canvas-item img {
+  width: 350px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.Canvas-item .div1 img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  aspect-ratio: 600 / 450;
+}
+
+.back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  font-size: 25px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.Canvas-item > div:hover .back {
+  opacity: 1;
+}
+
+.section {
+  background: #000;
+  font-family: var(--serif);
+}
+
+.section .content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section h2 {
+  font-weight: 400;
+  line-height: 1.05;
+  text-align: left;
+}
+
+.label {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 14px;
+  margin-bottom: 44px;
+}
+
+.section-head h2 {
+  font-size: clamp(36px, 5vw, 64px);
+}
+
+.art-section {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 3fr);
+  gap: 32px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.art-section img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.art-section > div:nth-child(2) {
+  margin-top: 60px;
+}
+.art-section > div:nth-child(3) {
+  margin-top: 120px;
+}
+
+.art-section h3 {
+  font-weight: 400;
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+.art-section p {
+  color: var(--muted);
+}
+
+.Photography {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.Photography::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  background: var(--ink);
+}
+
+.timeline {
+  position: relative;
+  width: 50%;
+  padding: 10px 40px;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+  background: #000;
+  border: 4px solid var(--ink);
+  border-radius: 50%;
+}
+
+.one {
+  left: 0;
+}
+.two {
+  left: 50%;
+}
+.one::after {
+  right: -17px;
+}
+.two::after {
+  left: -16px;
+}
+
+.timeline-content {
+  position: relative;
+  padding: 20px 30px;
+  background: var(--ink);
+  color: #000;
+  border-radius: 6px;
+}
+
+.timeline-content h2 {
+  margin: 0 0 8px;
+}
+.timeline-content p {
+  margin: 0;
+}
+
+.timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.one .timeline-content::before {
+  right: -10px;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent var(--ink);
+}
+
+.two .timeline-content::before {
+  left: -10px;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent var(--ink) transparent transparent;
+}
+
+.runway {
+  background: #000;
+  font-family: var(--serif);
+}
+
+.runway img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.runway h2,
+.runway h3 {
+  font-weight: 400;
+  line-height: 1.05;
+  text-align: left;
+}
+
+.runway .content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.runway .imgbox {
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.runway .imgbox img {
+  transition: transform 1s ease;
+}
+.runway .imgbox:hover img {
+  transform: scale(1.04);
+}
+
+.runway-section {
+  position: relative;
+  height: 92vh;
+  min-height: 520px;
+}
+
+.runway-section img {
+  opacity: 0.7;
+}
+
+.runway-section .txt {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px 56px;
+}
+
+.runway-section h2 {
+  font-size: clamp(56px, 10vw, 150px);
+  letter-spacing: -0.02em;
+}
+
+.runway-section p {
+  max-width: 520px;
+  margin-top: 16px;
+  font-size: 19px;
+}
+
+.canvas-section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.runway .section-head h2 {
+  font-size: clamp(36px, 5vw, 64px);
+}
+
+.weeks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--ink);
+}
+
+.weeks a {
+  padding: 28px 24px 40px;
+  border-right: 1px solid var(--line);
+  transition: background 0.4s;
+}
+
+.weeks a:first-child {
+  padding-left: 0;
+}
+.weeks a:last-child {
+  border-right: 0;
+}
+.weeks a:hover {
+  background: var(--panel);
+}
+.weeks h3 {
+  font-size: 40px;
+  margin: 8px 0;
+}
+.weeks p {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.spot {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.spot .imgbox {
+  aspect-ratio: 4 / 5;
+}
+.spot h3 {
+  font-size: clamp(34px, 5vw, 64px);
+  margin: 10px 0 18px;
+}
+.spot p {
+  margin-bottom: 22px;
+  opacity: 0.85;
+}
+
+.spot.rev {
+  grid-template-columns: 6fr 5fr;
+  margin-top: 96px;
+}
+
+.spot.rev .imgbox {
+  order: 2;
+}
+
+.r-link {
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--ink);
+  transition: opacity 0.3s;
+}
+
+.r-link:hover {
+  opacity: 0.5;
+}
+
+.behind {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 32px;
+  align-items: end;
+}
+
+.behind .big {
+  aspect-ratio: 4 / 3;
+}
+.behind .small {
+  aspect-ratio: 3 / 4;
+  margin-bottom: 20px;
+}
+.behind h3 {
+  font-size: 26px;
+  margin: 6px 0;
+}
+
+.r-caption {
+  margin-top: 8px;
+  font-size: 13px;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+.closing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 96px 32px;
+}
+
+.closing h2 {
+  font-size: clamp(34px, 5vw, 64px);
+}
+.closing .imgbox {
+  aspect-ratio: 4 / 5;
+  max-width: 420px;
+}
+
+.show {
+  margin: 40px 0 10px;
+  text-align: center;
+}
+
+.Fashion-title {
+  margin: 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.05;
+}
+
+.Fashion-headline {
+  max-width: 760px;
+  margin: 30px auto 60px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.Fashion-headline p {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(24px, 3.4vw, 35px);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.Fashion-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 20px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px 70px;
+}
+
+.Fashion-article {
+  grid-column: 1;
+}
+
+.Fashion-page {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+}
+
+.Fashion-article p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.7;
+  letter-spacing: 0.05em;
+  text-align: justify;
+}
+
+.Fashion-article p:first-child::first-letter {
+  float: left;
+  padding: 6px 10px 0 0;
+  font-family: var(--serif);
+  font-size: 64px;
+  line-height: 0.8;
+  letter-spacing: 0;
+}
+
+.Fashion-page img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 30%;
+}
+
+.photo-tag {
+  margin-top: 10px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-style: italic;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+@media (min-width: 600px) {
+  .Canvas-item {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .div1 {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 992px) {
+  .Canvas-item {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .div1 {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+  .div2 {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .div3 {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .div4 {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .div5 {
+    grid-column: 3;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 992px) {
+  .weeks {
+    grid-template-columns: 1fr 1fr;
+  }
+  .spot,
+  .spot.rev,
+  .behind,
+  .closing {
+    grid-template-columns: 1fr;
+  }
+  .spot.rev .imgbox {
+    order: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .Fashion-layout {
+    grid-template-columns: 1fr;
+    padding: 0 20px 70px;
+  }
+  .Fashion-article,
+  .Fashion-page {
+    grid-column: 1;
+  }
+  .Fashion-page {
+    grid-row: 1;
+  }
+  .Fashion-article p {
+    letter-spacing: 0.04em;
+  }
+}
+
+@media (max-width: 640px) {
+  .runway .content {
+    padding: 0 20px;
+  }
+  .canvas-section {
+    padding: 56px 0;
+  }
+  .weeks {
+    grid-template-columns: 1fr;
+  }
+  .weeks a {
+    padding: 20px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .art-section {
+    grid-template-columns: 1fr;
+  }
+  .art-section > div:nth-child(n) {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .Photography::after {
+    left: 31px;
+  }
+
+  .timeline {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 15px;
+  }
+
+  .one,
+  .two {
+    left: 0;
+  }
+
+  .one::after,
+  .two::after {
+    left: 18px;
+    right: auto;
+  }
+
+  .one .timeline-content::before,
+  .two .timeline-content::before {
+    left: -10px;
+    right: auto;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--ink) transparent transparent;
+  }
+}
